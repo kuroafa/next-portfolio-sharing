@@ -20,6 +20,7 @@
     "coffee-script": "^1.12.7",
     "encoding": "^0.1.13",
     "graphql-request": "^6.1.0",
+    "graphql-tag": "^2.12.6",
     "jsonwebtoken": "^9.0.0",
     "next": "13.4.6",
     "next-auth": "^4.22.1",

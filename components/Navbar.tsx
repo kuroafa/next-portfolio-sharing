@@ -6,16 +6,18 @@ import Authproviders from "@/components/AuthProviders";
 import { getCurrentUser } from "@/lib/session";
 import { signOut } from "next-auth/react";
 import ProfileMenu from "./ProfileMenu";
+import Button from "./Button";
 
 const Navbar = async () => {
   const session = await getCurrentUser();
   return (
     <nav className="flexBetween navbar">
       <div className="flex-1 slex-start gap-10">
-        <Link href="/">
-          <Image src="/logo.svg" width={115} height={43} alt="flexibble" />
+        <Link className="logo xl:text-[50px] lg:text-[40px]  md:text-[30px]  xs:text-[20px]" href="/">
+          {/* <Image src="/logo.svg" width={115} height={43} alt="flexibble" /> */}
+           Designer's Domain
         </Link>
-        <ul className="xl:flex hidden text-small gap-7 ">
+        <ul className="xl:flex hidden mt-5  text-small gap-7 ">
           {NavLinks.map((link) => (
             <Link href={link.href} key={link.key}>
               {link.text}
@@ -28,7 +30,8 @@ const Navbar = async () => {
           <>
             <ProfileMenu session={session} />
 
-            <Link href="/create-project">share work</Link>
+            <Link className="font-bold text-xl text-gray-600" href="/create-project"><Button
+            title="Post project"/></Link>
           </>
         ) : (
           <Authproviders />
