@@ -56,7 +56,7 @@
   `;
   
   export const projectsQuery = `
-  query getProjects($categories: [String!], $endcursor: String) {
+  query getProjects($categories: [String!] , $endcursor: String) {
     projectSearch(first: 8, after: $endcursor, filter:  {category: {in: $categories}}) {
       pageInfo {
         hasNextPage
