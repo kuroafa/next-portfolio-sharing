@@ -55,39 +55,9 @@
     }
   `;
   
-//   export const projectsQuery = `
-//   query getProjects($categories: [String!] , $endcursor: String) {
-//     projectSearch(first: 8, after: $endcursor, filter:  {category: {in: $categories}}) {
-//       pageInfo {
-//         hasNextPage
-//         hasPreviousPage
-//         startCursor
-//         endCursor
-//       }
-//       edges {
-//         node {
-//           title
-//           githubUrl
-//           description
-//           liveSiteUrl
-//           id
-//           image
-//           category
-//           createdBy {
-//             id
-//             email
-//             name
-//             avatarUrl
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
-
-export const projectsQuery = `
-  query getProjects($category: String = "", $endcursor: String) {
-    projectSearch(first: 8, after: $endcursor, filter: {category: {eq: $category}}) {
+  export const projectsQuery = `
+  query getProjects($categories: [String!] , $endcursor: String) {
+    projectSearch(first: 8, after: $endcursor, filter:  {category: {in: $categories}}) {
       pageInfo {
         hasNextPage
         hasPreviousPage
@@ -114,6 +84,8 @@ export const projectsQuery = `
     }
   }
 `;
+
+
   
   export const getProjectByIdQuery = `
     query GetProjectById($id: ID!) {
