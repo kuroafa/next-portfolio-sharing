@@ -31,6 +31,7 @@ const ProjectActions = ({ projectId }: { projectId: string }) => {
       >
         <Image alt="edit" src="/pencile.svg" width={15} height={15} />
       </Link>
+      
       <button
         className={`flexCenter delete-action_btn ${
           isDeleting ? "bg-gray" : "bg-primary-purple"

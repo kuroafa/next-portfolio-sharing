@@ -1,10 +1,8 @@
-"use client"
 import { ProjectInterface } from "@/common.types";
 import Categories from "@/components/Categories";
 import LoadMore from "@/components/LoadMore";
 import ProjectCard from "@/components/ProjectCard";
 import { fetchAllProjects } from "@/lib/actions";
-import { useState } from 'react'
 
 
 
