@@ -34,15 +34,15 @@ const Home = async ({ searchParams: { category, endcursor } }: Props) => {
 
   const projectsToDisplay = data?.projectSearch?.edges || [];
 
-  if (projectsToDisplay.length === 0) {
-    return (
-      <section className="flexStart flex-col paddings">
-        <Categories />
+  // if (projectsToDisplay.length === 0) {
+  //   return (
+  //     <section className="flexStart flex-col paddings">
+  //       <Categories />
 
-        <p className="no-result-text text-center">No projects found, go create some first.</p>
-      </section>
-    )
-  }
+  //       <p className="no-result-text text-center">No projects found, go create some first.</p>
+  //     </section>
+  //   )
+  // }
 
   return (
     <section className="flexStart flex-col paddings mb-16">
