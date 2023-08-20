@@ -1,7 +1,6 @@
 import { ProjectForm } from "@/common.types";
 import { createProjectMutation, createUserMutation, deleteProjectMutation, getProjectByIdQuery, getProjectsOfUserQuery, getUserQuery, projectsQuery, projectsQueryAll, projectsQueryWithFilter, updateProjectMutation } from "@/graphql";
 import { GraphQLClient } from "graphql-request";
-import cloudinary from 'cloudinary-core';
 import { categoryFilters } from "@/constants";
 
 const isProduction = process.env.NODE_ENV === "production";
@@ -87,7 +86,7 @@ export const createNewProject = async (
 export const fetchAllProjects = (category?: string | null, endcursor?: string | null) => {
   client.setHeader("x-api-key", apiKey);
 
-  const categories = category == null ? categoryFilters : [category];
+  const categories = category == null ? categoryFilters : "" ;
 
   return makeGraphQLRequest(projectsQuery, { categories, endcursor });
 };
